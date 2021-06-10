@@ -62,9 +62,9 @@ modules:
       - type: archive
         url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.05.tar.gz
         sha256: fda66be9d217e239407b08eced6f0d2cab6d46cdc6c8a61bad676aad19fca2c5
-      - type: archive
-        url: https://github.com/cnr-isti-vclab/vcglib/archive/refs/tags/2020.12.tar.gz
-        sha256: 731c57435e39c4b958a1d766cadd9865d9db35e36410708f2da7818e9fa5f786
+      - type: git
+        url: git://github.com/cnr-isti-vclab/vcglib.git
+        commit: 85d66654308a4ab80068cad36a41cfe080728ad6
         dest: src/vcglib
 
   - name: MeshLab-appdata-icon
