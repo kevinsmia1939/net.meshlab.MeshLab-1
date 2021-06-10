@@ -60,8 +60,8 @@ modules:
     subdir: src
     sources:
       - type: archive
-        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2020.12.tar.gz
-        sha256: 9399342d18df1ddffb3a220e0b8d6ce133b5fb4f91e5d1dc44b6c7c4d6c9f0ee
+        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.05.tar.gz
+        sha256: fda66be9d217e239407b08eced6f0d2cab6d46cdc6c8a61bad676aad19fca2c5
       - type: archive
         url: https://github.com/cnr-isti-vclab/vcglib/archive/refs/tags/2020.12.tar.gz
         sha256: 731c57435e39c4b958a1d766cadd9865d9db35e36410708f2da7818e9fa5f786
