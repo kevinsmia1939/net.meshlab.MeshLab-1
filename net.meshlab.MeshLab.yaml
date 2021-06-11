@@ -4,6 +4,7 @@ sdk: org.kde.Sdk
 runtime-version: '5.15'
 command: meshlab
 rename-desktop-file: meshlab.desktop
+rename-icon: meshlab
 # Wayland does not work https://github.com/cnr-isti-vclab/meshlab/issues/738
 finish-args:
   - --share=ipc
