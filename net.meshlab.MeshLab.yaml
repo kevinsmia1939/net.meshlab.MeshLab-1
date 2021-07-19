@@ -20,23 +20,27 @@ cleanup:
   - /bin/rbox
   - /bin/q*
   - /bin/3dsdump
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 
 modules:
   - shared-modules/glew/glew.json
   - shared-modules/glu/glu-9.json
-  
+
   - name: Eigen3
     buildsystem: cmake-ninja
     builddir: true
-    cleanup: 
-      - "*"
     sources:
       - type: archive
         url: https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.bz2
         sha256: 0fa5cafe78f66d2b501b43016858070d52ba47bd9b1016b0165a7b8e04675677
-        
+        x-checker-data:
+          type: anitya
+          project-id: 13751
+          stable-only: true
+          url-template: https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2
+    cleanup:
+      - '*'
   - name: lib3ds
     buildsystem: autotools
     sources:
@@ -47,7 +51,7 @@ modules:
         dest-filename: autogen.sh
         commands:
           - autoreconf -vfi
-        
+
   - name: gmp
     config-opts:
       - --prefix=/app
@@ -55,19 +59,31 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz
         sha256: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
-  
+        x-checker-data:
+          type: anitya
+          project-id: 1186
+          stable-only: true
+          url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
+
   - name: MeshLab
     buildsystem: cmake
     subdir: src
     sources:
       - type: archive
-        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.05.tar.gz
-        sha256: fda66be9d217e239407b08eced6f0d2cab6d46cdc6c8a61bad676aad19fca2c5
+        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.07.tar.gz
+        sha256: 5fc24fe1a90848ab836a5cc0d4416a48540da635ac201708be6ad82593ca3b2b
+        x-checker-data:
+          type: anitya
+          project-id: 223000
+          url-template: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-$version.tar.gz
       - type: git
         url: git://github.com/cnr-isti-vclab/vcglib.git
-        commit: 85d66654308a4ab80068cad36a41cfe080728ad6
+        commit: 8132239bfa5bc864a016b4fb3a27f389e4921ca4
         dest: src/vcglib
+        x-checker-data:
+          type: git
 
+        tag: '2021.07'
   - name: MeshLab-appdata
     buildsystem: simple
     build-commands:
