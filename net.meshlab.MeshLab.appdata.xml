@@ -9,9 +9,9 @@
     <description>
         <p>
            MeshLab is a free and open source processing and editing 3D triangular meshes.
-           It provides a set of tools for editing, cleaning, healing, inspecting, 
+           It provides a set of tools for editing, cleaning, healing, inspecting,
            rendering, texturing and converting meshes. It offers features for processing
-           raw data produced by 3D digitization tools/devices and for preparing models 
+           raw data produced by 3D digitization tools/devices and for preparing models
            for 3D printing.
         </p>
     </description>
@@ -40,6 +40,7 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="2021.07" date="2021-07-19"/>
         <release version="2021.05" date="2021-05-21">
             <description>
                 <p>Enhancements:</p>
@@ -64,4 +65,4 @@
             </description>
         </release>
   </releases>
-</component> 
+</component>
