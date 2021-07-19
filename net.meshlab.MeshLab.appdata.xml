@@ -41,7 +41,6 @@
     <content_rating type="oars-1.1"/>
     <releases>
         <release version="2021.07" date="2021-07-19"/>
-        </release>
         <release version="2021.05" date="2021-05-21">
             <description>
                 <p>Enhancements:</p>
