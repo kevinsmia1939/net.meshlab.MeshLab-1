@@ -27,6 +27,50 @@ modules:
   - shared-modules/glew/glew.json
   - shared-modules/glu/glu-9.json
 
+  - name: MPFR
+    buildsystem: autotools
+    builddir: true
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz
+        sha256: 0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          stable-only: true
+          url-template: https://www.mpfr.org/mpfr-current/mpfr-$version.tar.xz
+
+  - name: Boost
+    buildsystem: simple
+    build-commands:
+      - ./bootstrap.sh --prefix=/app
+      - ./b2 install --build-type=complete link=shared --layout=versioned runtime-link=shared cxxflags="$CXXFLAGS" linkflags="$LDFLAGS" -j $FLATPAK_BUILDER_N_JOBS
+    sources:
+      - type: archive
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
+        sha256: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
+        x-checker-data:
+          type: anitya
+          project-id: 6845
+          stable-only: true
+          url-template: https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_${patch}.tar.bz2
+
+  - name: CGAL
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCGAL_HEADER_ONLY=ON
+    sources:
+      - type: archive
+        url: https://github.com/CGAL/cgal/releases/download/v5.3/CGAL-5.3.tar.xz
+        sha256: 2c242e3f27655bc80b34e2fa5e32187a46003d2d9cd7dbec8fbcbc342cea2fb6
+        x-checker-data:
+          type: anitya
+          project-id: 273
+          stable-only: true
+          url-template: https://github.com/CGAL/cgal/releases/download/v$version/CGAL-$version.tar.xz
+
   - name: Eigen3
     buildsystem: cmake-ninja
     builddir: true
@@ -41,6 +85,7 @@ modules:
           url-template: https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2
     cleanup:
       - '*'
+
   - name: lib3ds
     buildsystem: autotools
     sources:
@@ -69,21 +114,14 @@ modules:
     buildsystem: cmake
     subdir: src
     sources:
-      - type: archive
-        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.07.tar.gz
-        sha256: 5fc24fe1a90848ab836a5cc0d4416a48540da635ac201708be6ad82593ca3b2b
-        x-checker-data:
-          type: anitya
-          project-id: 223000
-          url-template: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-$version.tar.gz
       - type: git
-        url: git://github.com/cnr-isti-vclab/vcglib.git
-        commit: 8132239bfa5bc864a016b4fb3a27f389e4921ca4
-        dest: src/vcglib
+        url: git://github.com/cnr-isti-vclab/meshlab.git
+        tag: 'Meshlab-2021.07'
+        commit: 83aca89334956a695ffd80bd01818d3a1420005e
         x-checker-data:
           type: git
+          tag-pattern: "^(Meshlab-[\\d.]+)$"
 
-        tag: '2021.07'
   - name: MeshLab-appdata
     buildsystem: simple
     build-commands:
