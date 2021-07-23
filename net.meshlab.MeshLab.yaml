@@ -116,19 +116,11 @@ modules:
     sources:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab.git
-        tag: '2021.07'
+        tag: 'Meshlab-2021.07'
         commit: 83aca89334956a695ffd80bd01818d3a1420005e
         x-checker-data:
           type: git
-          tag-pattern: "^([\d.]+)$"
-      - type: git
-        url: git://github.com/cnr-isti-vclab/vcglib.git
-        tag: '2021.07'
-        commit: 8132239bfa5bc864a016b4fb3a27f389e4921ca4
-        dest: src/vcglib
-        x-checker-data:
-          type: git
-          tag-pattern: "^([\d.]+)$"
+          tag-pattern: "^(Meshlab-[\\d.]+)$"
 
   - name: MeshLab-appdata
     buildsystem: simple
