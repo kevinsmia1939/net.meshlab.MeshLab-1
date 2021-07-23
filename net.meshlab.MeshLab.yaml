@@ -63,12 +63,13 @@ modules:
       - -DCGAL_HEADER_ONLY=ON
     sources:
       - type: archive
-        url: https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14.3/CGAL-4.14.3.tar.xz
-        sha256: 5bafe7abe8435beca17a1082062d363368ec1e3f0d6581bb0da8b010fb389fe4
+        url: https://github.com/CGAL/cgal/releases/download/v5.3/CGAL-5.3.tar.xz
+        sha256: 2c242e3f27655bc80b34e2fa5e32187a46003d2d9cd7dbec8fbcbc342cea2fb6
         x-checker-data:
           type: anitya
           project-id: 273
-          url-template: https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-$version/CGAL-$version.tar.xz
+          stable-only: true
+          url-template: https://github.com/CGAL/cgal/releases/download/v$version/CGAL-$version.tar.xz
 
   - name: Eigen3
     buildsystem: cmake-ninja
@@ -84,6 +85,7 @@ modules:
           url-template: https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2
     cleanup:
       - '*'
+
   - name: lib3ds
     buildsystem: autotools
     sources:
@@ -108,18 +110,17 @@ modules:
           stable-only: true
           url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
 
-  - name: MeshLab1
+  - name: MeshLab
     buildsystem: cmake
     subdir: src
     sources:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab.git
-        tag: 2021.07
+        tag: '2021.07'
         commit: 83aca89334956a695ffd80bd01818d3a1420005e
         x-checker-data:
-          type: anitya
-          project-id: 223000
-          url-template: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-$version.tar.gz
+          type: git
+          tag-pattern: "^([\d.]+)$"
       - type: git
         url: git://github.com/cnr-isti-vclab/vcglib.git
         tag: '2021.07'
@@ -127,8 +128,7 @@ modules:
         dest: src/vcglib
         x-checker-data:
           type: git
-          tag-template: $version
-
+          tag-pattern: "^([\d.]+)$"
 
   - name: MeshLab-appdata
     buildsystem: simple
