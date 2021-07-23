@@ -121,12 +121,12 @@ modules:
           url-template: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-$version.tar.gz
       - type: git
         url: git://github.com/cnr-isti-vclab/vcglib.git
+        tag: '2021.07'
         commit: 8132239bfa5bc864a016b4fb3a27f389e4921ca4
         dest: src/vcglib
         x-checker-data:
           type: git
 
-        tag: '2021.07'
   - name: MeshLab-appdata
     buildsystem: simple
     build-commands:
