@@ -108,13 +108,14 @@ modules:
           stable-only: true
           url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
 
-  - name: MeshLab
+  - name: MeshLab1
     buildsystem: cmake
     subdir: src
     sources:
-      - type: archive
-        url: https://github.com/cnr-isti-vclab/meshlab/archive/refs/tags/Meshlab-2021.07.tar.gz
-        sha256: 5fc24fe1a90848ab836a5cc0d4416a48540da635ac201708be6ad82593ca3b2b
+      - type: git
+        url: git://github.com/cnr-isti-vclab/meshlab.git
+        tag: 2021.07
+        commit: 83aca89334956a695ffd80bd01818d3a1420005e
         x-checker-data:
           type: anitya
           project-id: 223000
@@ -126,6 +127,8 @@ modules:
         dest: src/vcglib
         x-checker-data:
           type: git
+          tag-template: $version
+
 
   - name: MeshLab-appdata
     buildsystem: simple
