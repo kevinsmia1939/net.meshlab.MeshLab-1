@@ -113,7 +113,7 @@ modules:
   - name: MeshLab
     buildsystem: cmake
     config-opts:
-      - -DCMAKE_BUILD_TYPE=MinSizeRel
+      - -DCMAKE_BUILD_TYPE:STRING=MinSizeRel
     subdir: src
     sources:
       - type: git
