@@ -1,11 +1,15 @@
 diff -ruN a/plugins/filter_poisson/src/Geometry.h b/plugins/filter_poisson/src/Geometry.h
 --- a/plugins/filter_poisson/src/Geometry.h	2021-08-12 03:19:43.962597498 +0700
-+++ b/plugins/filter_poisson/src/Geometry.h	2021-08-12 03:38:14.070465684 +0700
-@@ -29,6 +29,7 @@
++++ b/plugins/filter_poisson/src/Geometry.h	2021-08-15 02:53:28.856284693 +0700
+@@ -26,6 +26,11 @@
+ DAMAGE.
+ */
+ 
++#pragma once
++#ifndef FILE_h
++#define FILE_h
++#include <bits/types/FILE.h>
++#endif // FILE.h
  #ifndef GEOMETRY_INCLUDED
  #define GEOMETRY_INCLUDED
  #include <math.h>
-+#include <bits/types/FILE.h>
- #include <vector>
- #include <unordered_map>
- //#include "Hash.h"
