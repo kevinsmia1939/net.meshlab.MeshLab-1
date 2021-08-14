@@ -114,11 +114,6 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=MinSizeRel
-    build-options:
-      cflags: -O2 -g -fno-sized-deallocation
-      cxxflags: -O2 -g -fno-sized-deallocation
-      env:
-        LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}:/app/lib/:/usr/lib
     subdir: src
     sources:
       - type: git
