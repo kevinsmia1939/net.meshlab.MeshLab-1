@@ -11,7 +11,7 @@ finish-args:
   - --socket=x11
   - --device=dri
   - --filesystem=/tmp
-  - --filesystem=host
+  - --filesystem=home
 cleanup:
   - /include
   - /lib/cmake
