@@ -5,7 +5,7 @@
     <name>MeshLab</name>
     <summary>Free and open source processing and editing 3D triangular meshes</summary>
     <metadata_license>CC0-1.0</metadata_license>
-    <project_license>BSD-3-Clause</project_license>
+    <project_license>GPL-3.0-only</project_license>
     <description>
         <p>
            MeshLab is a free and open source processing and editing 3D triangular meshes.
