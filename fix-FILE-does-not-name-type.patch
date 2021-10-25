@@ -1,0 +1,13 @@
+diff -ruN a/plugins/filter_poisson/src/Geometry.h b/plugins/filter_poisson/src/Geometry.h
+--- a/plugins/filter_poisson/src/Geometry.h	2021-08-11 22:19:43.962597498 +0200
++++ b/plugins/filter_poisson/src/Geometry.h	2021-08-20 20:03:37.260420501 +0200
+@@ -28,6 +28,9 @@
+ 
+ #ifndef GEOMETRY_INCLUDED
+ #define GEOMETRY_INCLUDED
++#ifdef __linux__
++#include <bits/types/FILE.h>
++#endif //__linux__
+ #include <math.h>
+ #include <vector>
+ #include <unordered_map>
