@@ -136,6 +136,7 @@ modules:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
         tag: master
+        disable-fsckobjects: true
         x-checker-data:
           type: git
           tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
