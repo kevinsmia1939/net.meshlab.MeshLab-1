@@ -12,6 +12,8 @@ finish-args:
   - --device=dri
   - --filesystem=/tmp
   - --filesystem=home
+  - --filesystem=/run/media
+  - --filesystem=/media
 cleanup:
   - /include
   - /lib/cmake
