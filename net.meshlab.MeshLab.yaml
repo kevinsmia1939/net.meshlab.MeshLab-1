@@ -144,7 +144,6 @@ modules:
           #type: git
           #tag-pattern: ^(Meshlab-Extra-Plugins-[\d.]+)$
 
-        commit: c16fec72b5160ce404b58b496e4c7c48929ffb82
   - name: MeshLab-appdata
     buildsystem: simple
     build-commands:
