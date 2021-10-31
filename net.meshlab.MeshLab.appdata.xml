@@ -40,29 +40,9 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="2021.10" date="2021-10-28"/>
         <release version="2021.07" date="2021-07-19"/>
-        <release version="2021.05" date="2021-05-21">
-            <description>
-                <p>Enhancements:</p>
-                <ul>
-                    <li>New Texture Map Defragmentation plugin</li>
-                    <li>Possibility to load files with more than one layer</li>
-                    <li>Reintroduction of far clipping plane</li>
-                    <li>Possibility to load custom shaders</li>
-                    <li>Runtime loading of MeshLab Plugins</li>
-                    <li>Lot of bugfixes</li>
-                </ul>
-            </description>
-        </release>
-        <release version="2020.12" date="2020-12-01">
-            <description>
-                <p>Enhancements:</p>
-                <ul>
-                    <li>GUI improvements</li>
-                    <li>MeshLabServer is officially dismissed</li>
-                    <li>Lot of bug fixes</li>
-                </ul>
-            </description>
-        </release>
+        <release version="2021.05" date="2021-05-21"/>
+        <release version="2020.12" date="2020-12-01"/>
   </releases>
 </component>
