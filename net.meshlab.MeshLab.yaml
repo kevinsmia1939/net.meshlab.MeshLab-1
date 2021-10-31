@@ -122,11 +122,12 @@ modules:
     sources:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab.git
-        tag: master
+        tag: Meshlab-2021.10
         x-checker-data:
           type: git
           tag-pattern: ^(Meshlab-[\d.]+)$
 
+        commit: dbb49ca4365b02c8c34019b394ef4bd50e0ac448
   - name: MeshLab-extra-plugin
     buildsystem: cmake
     build-options:
@@ -137,12 +138,13 @@ modules:
     sources:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
-        tag: master
+        tag: Meshlab-Extra-Plugins-2021.07
         disable-fsckobjects: true
         x-checker-data:
           type: git
-          tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
+          tag-pattern: ^(Meshlab-Extra-Plugins-[\d.]+)$
 
+        commit: c16fec72b5160ce404b58b496e4c7c48929ffb82
   - name: MeshLab-appdata
     buildsystem: simple
     build-commands:
