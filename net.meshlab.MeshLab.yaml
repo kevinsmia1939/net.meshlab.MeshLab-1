@@ -102,7 +102,7 @@ modules:
 
   - name: gmp
     config-opts:
-      - --prefix=/app
+      - --disable-shared
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz
