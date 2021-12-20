@@ -94,6 +94,9 @@ modules:
 
   - name: lib3ds
     buildsystem: autotools
+    config-opts:
+      - --disable-shared
+      - --with-pic
     sources:
       - type: archive
         url: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/lib3ds/lib3ds-1.3.0.zip
