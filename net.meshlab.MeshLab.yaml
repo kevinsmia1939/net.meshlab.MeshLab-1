@@ -18,11 +18,14 @@ cleanup:
   - /include
   - /lib/cmake
   - /lib/pkgconfig
+  - /lib/debug
   - /share/doc
   - /share/man
   - /bin/rbox
   - /bin/q*
   - /bin/3dsdump
+  - /bin/lib3ds-*
+  - /bin/cgal_*
   - '*.la'
   - '*.a'
 
