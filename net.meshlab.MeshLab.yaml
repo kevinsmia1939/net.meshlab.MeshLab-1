@@ -46,9 +46,8 @@ modules:
   - name: Boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app
-      - ./b2 install --build-type=complete link=shared --layout=versioned runtime-link=shared
-        cxxflags="$CXXFLAGS" linkflags="$LDFLAGS" -j $FLATPAK_BUILDER_N_JOBS
+      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,regex
+      - ./b2 install link=static runtime-link=static cxxflags="-fPIC" -j $FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
         url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
