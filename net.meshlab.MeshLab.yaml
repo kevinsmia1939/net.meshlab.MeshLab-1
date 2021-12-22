@@ -5,10 +5,10 @@ runtime-version: '5.15'
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
-# Wayland does not work https://github.com/cnr-isti-vclab/meshlab/issues/738
 finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
   - --share=ipc
-  - --socket=x11
   - --device=dri
   - --filesystem=/tmp
   - --filesystem=home
@@ -18,11 +18,14 @@ cleanup:
   - /include
   - /lib/cmake
   - /lib/pkgconfig
+  - /lib/debug
   - /share/doc
   - /share/man
   - /bin/rbox
   - /bin/q*
   - /bin/3dsdump
+  - /bin/lib3ds-*
+  - /bin/cgal_*
   - '*.la'
   - '*.a'
 
@@ -33,6 +36,9 @@ modules:
   - name: MPFR
     buildsystem: autotools
     builddir: true
+    config-opts:
+      - --disable-shared
+      - --with-pic
     sources:
       - type: archive
         url: https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz
@@ -46,9 +52,8 @@ modules:
   - name: Boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app
-      - ./b2 install --build-type=complete link=shared --layout=versioned runtime-link=shared
-        cxxflags="$CXXFLAGS" linkflags="$LDFLAGS" -j $FLATPAK_BUILDER_N_JOBS
+      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,regex
+      - ./b2 install link=static runtime-link=static cxxflags="-fPIC" -j $FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
         url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
@@ -92,6 +97,9 @@ modules:
 
   - name: lib3ds
     buildsystem: autotools
+    config-opts:
+      - --disable-shared
+      - --with-pic
     sources:
       - type: archive
         url: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/lib3ds/lib3ds-1.3.0.zip
@@ -103,7 +111,7 @@ modules:
 
   - name: gmp
     config-opts:
-      - --prefix=/app
+      - --disable-shared
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz
