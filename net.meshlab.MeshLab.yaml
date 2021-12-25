@@ -6,8 +6,10 @@ command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
 finish-args:
-  - --socket=wayland
-  - --socket=fallback-x11
+  # Disable wayland for now, until new GLEW version is release.
+  #- --socket=wayland
+  #- --socket=fallback-x11
+  - --socket=x11
   - --share=ipc
   - --device=dri
   - --filesystem=/tmp
