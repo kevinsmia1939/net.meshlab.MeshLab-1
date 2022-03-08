@@ -132,11 +132,11 @@ modules:
     sources:
       - type: git
         url: git://github.com/cnr-isti-vclab/meshlab.git
-        tag: Meshlab-2022.02
-        commit: 6262021ae930309559e46252f6d21b6bc8424ccc
+        tag: MeshLab-2022.02
+        commit: 58731df6d68e4edeb45d36e7c8828a9d46f8799a
         x-checker-data:
           type: git
-          tag-pattern: ^(Meshlab-[\d.]+)$
+          tag-pattern: ^(MeshLab-[\d.]+)$
 
   #- name: MeshLab-extra-plugin
     #buildsystem: cmake
