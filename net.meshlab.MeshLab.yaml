@@ -1,9 +1,12 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 command: meshlab
 rename-desktop-file: meshlab.desktop
+build-options:
+  cflags: -O2 -g -flto -fno-fat-lto-objects
+  cxxflags: -O2 -g -flto -fno-fat-lto-objects
 rename-icon: meshlab
 finish-args:
   # Disable wayland for now, until new GLEW version is release.
