@@ -1,7 +1,7 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
@@ -58,8 +58,8 @@ modules:
       - ./b2 install link=static runtime-link=static cxxflags="-fPIC" -j $FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
-        sha256: 8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
+        sha256: 475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39
         x-checker-data:
           type: anitya
           project-id: 6845
