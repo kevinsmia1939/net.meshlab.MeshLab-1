@@ -74,8 +74,8 @@ modules:
       - -DCGAL_HEADER_ONLY=ON
     sources:
       - type: archive
-        url: https://github.com/CGAL/cgal/releases/download/v5.4.1/CGAL-5.4.1.tar.xz
-        sha256: 4c3dd7ee4d36d237111a4d72b6e14170093271595d5b695148532daa95323d76
+        url: https://github.com/CGAL/cgal/releases/download/v5.4.2/CGAL-5.4.2.tar.xz
+        sha256: aa38c0bca2bfda666365038850219298c26c9cd32cededf8953aeb47531e181c
         x-checker-data:
           type: anitya
           project-id: 273
