@@ -1,7 +1,7 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-21.08
+runtime-version: 5.15-22.08
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
