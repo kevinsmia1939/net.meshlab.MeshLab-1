@@ -131,7 +131,7 @@ modules:
           url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
 
   - name: MeshLab
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=MinSizeRel
     subdir: src
@@ -145,7 +145,7 @@ modules:
           tag-pattern: ^(MeshLab-[\d.]+)$
 
   #- name: MeshLab-extra-plugin
-    #buildsystem: cmake
+    #buildsystem: cmake-ninja
     #build-options:
       #cflags: -fpermissive
       #cxxflags: -fpermissive
