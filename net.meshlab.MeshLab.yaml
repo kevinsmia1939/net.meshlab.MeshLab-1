@@ -137,7 +137,7 @@ modules:
     subdir: src
     sources:
       - type: git
-        url: git://github.com/cnr-isti-vclab/meshlab.git
+        url: https://github.com/cnr-isti-vclab/meshlab.git
         tag: MeshLab-2022.02
         commit: 58731df6d68e4edeb45d36e7c8828a9d46f8799a
         x-checker-data:
@@ -153,7 +153,7 @@ modules:
       #- -DCMAKE_BUILD_TYPE:STRING=Release
     #sources:
       #- type: git
-        #url: git://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
+        #url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
         #commit: c16fec72b5160ce404b58b496e4c7c48929ffb82
         #x-checker-data:
           #type: git
