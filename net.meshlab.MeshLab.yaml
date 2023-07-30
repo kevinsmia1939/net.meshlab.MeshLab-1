@@ -42,8 +42,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz
-        sha256: 0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.xz
+        sha256: 06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
         x-checker-data:
           type: anitya
           project-id: 2019
@@ -57,8 +57,8 @@ modules:
       - ./b2 install link=static runtime-link=static cxxflags="-fPIC" -j $FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2
-        sha256: 1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
+        sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -73,8 +73,8 @@ modules:
       - -DCGAL_HEADER_ONLY=ON
     sources:
       - type: archive
-        url: https://github.com/CGAL/cgal/releases/download/v5.5/CGAL-5.5.tar.xz
-        sha256: 98ac395ca08aacf38b7a8170a822b650aedf10355df41dd0e4bfb238408e08a6
+        url: https://github.com/CGAL/cgal/releases/download/v5.5.2/CGAL-5.5.2.tar.xz
+        sha256: b2b05d5616ecc69facdc24417cce0b04fb4321491d107db45103add520e3d8c3
         x-checker-data:
           type: anitya
           project-id: 273
@@ -121,8 +121,8 @@ modules:
       - --disable-shared
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz
-        sha256: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
+        url: https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
+        sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
         x-checker-data:
           type: anitya
           project-id: 1186
