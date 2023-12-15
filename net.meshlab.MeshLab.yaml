@@ -136,12 +136,8 @@ modules:
     subdir: src
     sources:
       - type: git
-        url: https://github.com/cnr-isti-vclab/meshlab.git
-        tag: MeshLab-2023.12
-        commit: 2dbd2f4b12df3b47d8777b2b4a43cabd9e425735
-        x-checker-data:
-          type: git
-          tag-pattern: ^(MeshLab-[\d.]+)$
+        url: https://github.com/alemuntoni/meshlab.git
+        commit: 41bc6d42c1356906134e5bedfff83e3da3ea2505
       - type: git
         url: https://github.com/alemuntoni/meshlab-external-libraries.git
         tag: 2023.12
