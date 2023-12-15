@@ -138,7 +138,7 @@ modules:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab.git
         tag: MeshLab-2023.12
-        commit: 58731df6d68e4edeb45d36e7c8828a9d46f8799a
+        commit: ebde808b16446f992076a9344ba9bf4b01ca1646
         x-checker-data:
           type: git
           tag-pattern: ^(MeshLab-[\d.]+)$
