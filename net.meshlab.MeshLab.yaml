@@ -149,11 +149,14 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=Release
-    subdir: src
     sources:
       - type: git
-        url: https://github.com/alemuntoni/meshlab.git
-        commit: 6a19cedac6129c9c6d737f5171bdc5acc84aea93
+        url: https://github.com/cnr-isti-vclab/meshlab.git
+        tag: MeshLab-2023.12
+        commit: 2dbd2f4b12df3b47d8777b2b4a43cabd9e425735
+        x-checker-data:
+          type: git
+          tag-pattern: ^(MeshLab-[\d.]+)$
       - type: git
         url: https://github.com/alemuntoni/meshlab-external-libraries.git
         tag: 2023.12
