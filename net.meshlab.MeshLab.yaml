@@ -145,7 +145,7 @@ modules:
       - type: git
         url: https://github.com/alemuntoni/meshlab-external-libraries.git
         tag: 2023.12
-        commit: 7c0fb0c8b11830e5893d10f1ee6b72c872c050ad
+        commit: c330d4de11a8dfd25e4bdc6fc7426fdcb08226fe
         dest: src/external
 
   #- name: MeshLab-extra-plugin
