@@ -175,11 +175,10 @@ modules:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
         commit: c7df060847d7d613b85ec6bcb8a211fee2e77b8d
+        tag: Meshlab-Extra-Plugins-2023.12
         x-checker-data:
           type: git
-          tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
-      # - type: patch
-      #   path: fix-FILE-does-not-name-type.patch
+          tag-pattern: ^(Meshlab-Extra-Plugins-[\d.]+)$
 
   - name: MeshLab-appdata
     buildsystem: simple
