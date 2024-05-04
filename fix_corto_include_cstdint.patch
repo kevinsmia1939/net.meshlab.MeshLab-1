@@ -1,0 +1,12 @@
+diff -ruN c/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h d/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h
+--- c/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h	2024-05-04 11:18:46.033238025 +0200
++++ d/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h	2024-05-04 11:30:24.401553423 +0200
+@@ -20,7 +20,7 @@
+ #define CRT_TUNSTALL_H
+ 
+ #include <vector>
+-
++#include <cstdint>
+ 
+ namespace crt {
+ 

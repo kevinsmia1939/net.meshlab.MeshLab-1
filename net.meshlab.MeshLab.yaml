@@ -31,8 +31,8 @@ cleanup:
   - '*.a'
 
 modules:
-  - shared-modules/glew/glew.json
-  - shared-modules/glu/glu-9.json
+  - glew/glew.json
+  - glu/glu-9.json
 
   - name: MPFR
     buildsystem: autotools
@@ -162,6 +162,8 @@ modules:
         tag: 2023.12
         commit: c330d4de11a8dfd25e4bdc6fc7426fdcb08226fe
         dest: src/external
+      - type: patch
+        path: fix_corto_include_cstdint.patch
 
   #- name: MeshLab-extra-plugin
     #buildsystem: cmake-ninja
