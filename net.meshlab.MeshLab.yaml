@@ -178,8 +178,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
-      - type: patch
-        path: fix-FILE-does-not-name-type.patch
+      # - type: patch
+      #   path: fix-FILE-does-not-name-type.patch
 
   - name: MeshLab-appdata
     buildsystem: simple
