@@ -1,7 +1,7 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-22.08
+runtime-version: 5.15-23.08
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
@@ -19,7 +19,7 @@ finish-args:
 cleanup:
   - /include
   - /lib/cmake
-  - /lib/pkgconfig`
+  - /lib/pkgconfig
   - /share/doc
   - /share/man
   - /bin/rbox
@@ -31,14 +31,13 @@ cleanup:
   - '*.a'
 
 modules:
-  - shared-modules/glew/glew.json
-  - shared-modules/glu/glu-9.json
+  - glew/glew.json
+  - glu/glu-9.json
 
   - name: MPFR
     buildsystem: autotools
     builddir: true
     config-opts:
-      - --disable-shared
       - --with-pic
     sources:
       - type: archive
@@ -162,23 +161,25 @@ modules:
         tag: 2023.12
         commit: c330d4de11a8dfd25e4bdc6fc7426fdcb08226fe
         dest: src/external
+      - type: patch
+        path: fix_E57Format_include_cstdint.patch
 
-  #- name: MeshLab-extra-plugin
-    #buildsystem: cmake-ninja
-    #build-options:
-      #cflags: -fpermissive
-      #cxxflags: -fpermissive
-    #config-opts:
-      #- -DCMAKE_BUILD_TYPE:STRING=Release
-    #sources:
-      #- type: git
-        #url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
-        #commit: c16fec72b5160ce404b58b496e4c7c48929ffb82
-        #x-checker-data:
-          #type: git
-          #tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
-      #- type: patch
-        #path: fix-FILE-does-not-name-type.patch
+  - name: MeshLab-extra-plugin
+    buildsystem: cmake-ninja
+    build-options:
+      cflags: -fpermissive
+      cxxflags: -fpermissive
+    config-opts:
+      - -DCMAKE_BUILD_TYPE:STRING=Release
+    sources:
+      - type: git
+        url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
+        commit: c7df060847d7d613b85ec6bcb8a211fee2e77b8d
+        x-checker-data:
+          type: git
+          tag-pattern: "^(Meshlab-Extra-Plugins-[\\d.]+)$"
+      # - type: patch
+      #   path: fix-FILE-does-not-name-type.patch
 
   - name: MeshLab-appdata
     buildsystem: simple
