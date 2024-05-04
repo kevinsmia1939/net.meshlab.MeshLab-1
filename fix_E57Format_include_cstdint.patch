@@ -1,0 +1,24 @@
+diff -ruN c/src/external/downloads/libE57Format-2.3.0/include/E57Format.h d/src/external/downloads/libE57Format-2.3.0/include/E57Format.h
+--- c/src/external/downloads/libE57Format-2.3.0/include/E57Format.h	2024-05-04 11:18:45.886570975 +0200
++++ d/src/external/downloads/libE57Format-2.3.0/include/E57Format.h	2024-05-04 15:32:51.990326144 +0200
+@@ -34,7 +34,7 @@
+ #include <cfloat>
+ #include <memory>
+ #include <vector>
+-
++#include <cstdint>
+ #include "E57Exception.h"
+ 
+ namespace e57
+diff -ruN c/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h d/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h
+--- c/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h	2024-05-04 11:18:46.033238025 +0200
++++ d/src/external/downloads/nexus-master/src/corto/include/corto/tunstall.h	2024-05-04 11:30:24.401553423 +0200
+@@ -20,7 +20,7 @@
+ #define CRT_TUNSTALL_H
+ 
+ #include <vector>
+-
++#include <cstdint>
+ 
+ namespace crt {
+ 
