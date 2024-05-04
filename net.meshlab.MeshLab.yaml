@@ -163,7 +163,7 @@ modules:
         commit: c330d4de11a8dfd25e4bdc6fc7426fdcb08226fe
         dest: src/external
       - type: patch
-        path: fix_corto_include_cstdint.patch
+        path: fix_E57Format_include_cstdint.patch
 
   #- name: MeshLab-extra-plugin
     #buildsystem: cmake-ninja
