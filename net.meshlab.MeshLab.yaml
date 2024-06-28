@@ -13,7 +13,7 @@ finish-args:
   - --share=ipc
   - --device=dri
   - --filesystem=/tmp
-  - --filesystem=home
+  - --filesystem=host #https://github.com/cnr-isti-vclab/meshlab/issues/1103
   - --filesystem=/run/media
   - --filesystem=/media
 cleanup:
@@ -31,8 +31,8 @@ cleanup:
   - '*.a'
 
 modules:
-  - glew/glew.json
-  - glu/glu-9.json
+  - shared-modules/glew/glew.json
+  - shared-modules/glu/glu-9.json
 
   - name: MPFR
     buildsystem: autotools
