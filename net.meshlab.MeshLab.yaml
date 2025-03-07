@@ -16,6 +16,7 @@ finish-args:
   - --filesystem=host #https://github.com/cnr-isti-vclab/meshlab/issues/1103
   - --filesystem=/run/media
   - --filesystem=/media
+  - --filesystem=xdg-run/gvfs # allow GVfs mounts
 cleanup:
   - /include
   - /lib/cmake
