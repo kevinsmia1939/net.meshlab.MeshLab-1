@@ -57,8 +57,8 @@ modules:
       - ./b2 install link=static runtime-link=static cxxflags="-fPIC" -j $FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
-        url: https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2
-        sha256: af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89
+        url: https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2
+        sha256: 46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -137,8 +137,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2022.0.0.tar.gz
-        sha256: e8e89c9c345415b17b30a2db3095ba9d47647611662073f7fbf54ad48b7f3c2a
+        url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2022.2.0.tar.gz
+        sha256: f0f78001c8c8edb4bddc3d4c5ee7428d56ae313254158ad1eec49eced57f6a5b
         x-checker-data:
           type: anitya
           project-id: 8217
@@ -152,8 +152,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab.git
-        tag: MeshLab-2023.12
-        commit: 2dbd2f4b12df3b47d8777b2b4a43cabd9e425735
+        tag: MeshLab-2025.07
+        commit: dc48b91ae562756a6988048c5d5c7f1d2b687256
         x-checker-data:
           type: git
           tag-pattern: ^(MeshLab-[\d.]+)$
