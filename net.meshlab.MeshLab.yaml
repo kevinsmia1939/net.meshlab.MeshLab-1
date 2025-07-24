@@ -159,27 +159,27 @@ modules:
           tag-pattern: ^(MeshLab-[\d.]+)$
       - type: git
         url: https://github.com/alemuntoni/meshlab-external-libraries.git
-        tag: 2023.12
-        commit: c330d4de11a8dfd25e4bdc6fc7426fdcb08226fe
+        tag: 2025.07
+        commit: fa745655c9b313506110afc54d8fbfbb51bca5ad
         dest: src/external
-      - type: patch
-        path: fix_E57Format_include_cstdint.patch
+      # - type: patch
+      #   path: fix_E57Format_include_cstdint.patch
 
-  - name: MeshLab-extra-plugin
-    buildsystem: cmake-ninja
-    build-options:
-      cflags: -fpermissive
-      cxxflags: -fpermissive
-    config-opts:
-      - -DCMAKE_BUILD_TYPE:STRING=Release
-    sources:
-      - type: git
-        url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
-        commit: c7df060847d7d613b85ec6bcb8a211fee2e77b8d
-        tag: Meshlab-Extra-Plugins-2023.12
-        x-checker-data:
-          type: git
-          tag-pattern: ^(Meshlab-Extra-Plugins-[\d.]+)$
+  # - name: MeshLab-extra-plugin
+  #   buildsystem: cmake-ninja
+  #   build-options:
+  #     cflags: -fpermissive
+  #     cxxflags: -fpermissive
+  #   config-opts:
+  #     - -DCMAKE_BUILD_TYPE:STRING=Release
+  #   sources:
+  #     - type: git
+  #       url: https://github.com/cnr-isti-vclab/meshlab-extra-plugins.git
+  #       commit: c7df060847d7d613b85ec6bcb8a211fee2e77b8d
+  #       tag: Meshlab-Extra-Plugins-2023.12
+  #       x-checker-data:
+  #         type: git
+  #         tag-pattern: ^(Meshlab-Extra-Plugins-[\d.]+)$
 
   - name: MeshLab-appdata
     buildsystem: simple
