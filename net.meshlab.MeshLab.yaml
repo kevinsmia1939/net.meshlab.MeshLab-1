@@ -162,6 +162,8 @@ modules:
         tag: 2025.07
         commit: fa745655c9b313506110afc54d8fbfbb51bca5ad
         dest: src/external
+      - type: patch
+        path: fix-lib3mf.patch
       # - type: patch
       #   path: fix_E57Format_include_cstdint.patch
 
