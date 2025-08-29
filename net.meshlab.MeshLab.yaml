@@ -109,19 +109,6 @@ modules:
         commands:
           - autoreconf -vfi
 
-  - name: gmp
-    config-opts:
-      - --disable-shared
-    sources:
-      - type: archive
-        url: https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
-        sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
-        x-checker-data:
-          type: anitya
-          project-id: 1186
-          stable-only: true
-          url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
-
   - name: TBB
     buildsystem: cmake-ninja
     config-opts:
