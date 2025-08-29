@@ -1,7 +1,7 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-23.08
+runtime-version: 5.15-24.08
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
@@ -145,10 +145,22 @@ modules:
           stable-only: true
           url-template: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v$version.tar.gz
 
+  - name: Xerces-C
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/apache/xerces-c/archive/refs/tags/v3.3.0.tar.gz
+        sha256: 0f28ea2d7a0a3824d326c8bc4be26a3bb01dde289663beb6f15b241f80cbd3ae
+      - type: patch
+        path: xerces-cpp17.patch
+    cleanup:
+      - /bin
+
   - name: MeshLab
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=Release
+      - -DMESHLAB_ALLOW_DOWNLOAD_SOURCE_LIB3MF=OFF
     sources:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab.git
@@ -162,8 +174,11 @@ modules:
         tag: 2025.07
         commit: fa745655c9b313506110afc54d8fbfbb51bca5ad
         dest: src/external
-      # - type: patch
-      #   path: fix_E57Format_include_cstdint.patch
+      - type: patch
+        path: lib3mf-fix-include.patch
+        options:
+          - -d
+          - src/external
 
   # - name: MeshLab-extra-plugin
   #   buildsystem: cmake-ninja
