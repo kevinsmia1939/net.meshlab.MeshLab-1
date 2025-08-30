@@ -1,7 +1,7 @@
 app-id: net.meshlab.MeshLab
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-23.08
+runtime-version: 5.15-24.08
 command: meshlab
 rename-desktop-file: meshlab.desktop
 rename-icon: meshlab
@@ -105,29 +105,9 @@ modules:
       - type: archive
         url: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/lib3ds/lib3ds-1.3.0.zip
         sha256: f5b00c302955a67fa5fb1f2d3f2583767cdc61fdbc6fd843c0c7c9d95c5629e3
-      # install newer versions of 'config.guess' and 'config.sub'
-      # source: https://git.savannah.gnu.org/cgit/config.git, commit c179db1b6f2ae484bfca1e9f8bae273e3319fa7d
-      - type: file
-        dest-filename: config.guess
-        url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=c179db1b6f2ae484bfca1e9f8bae273e3319fa7d
-        sha256: cf610daf8afdedbf2110abd79bdd4121d59080cab5ec46deaf67f97273bb6bda
-      - type: file
-        dest-filename: config.sub
-        url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=c179db1b6f2ae484bfca1e9f8bae273e3319fa7d
-        sha256: deb02c26f43b2ea64276c9ede77ec0f53d08e6256710f3c0a12275712085c348
-
-  - name: gmp
-    config-opts:
-      - --disable-shared
-    sources:
-      - type: archive
-        url: https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
-        sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
-        x-checker-data:
-          type: anitya
-          project-id: 1186
-          stable-only: true
-          url-template: https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
+      - type: shell
+        commands:
+          - autoreconf -vfi
 
   - name: TBB
     buildsystem: cmake-ninja
@@ -145,10 +125,22 @@ modules:
           stable-only: true
           url-template: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v$version.tar.gz
 
+  - name: Xerces-C
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/apache/xerces-c/archive/refs/tags/v3.3.0.tar.gz
+        sha256: 0f28ea2d7a0a3824d326c8bc4be26a3bb01dde289663beb6f15b241f80cbd3ae
+      - type: patch
+        path: xerces-cpp17.patch
+    cleanup:
+      - /bin
+
   - name: MeshLab
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=Release
+      - -DMESHLAB_ALLOW_DOWNLOAD_SOURCE_LIB3MF=OFF
     sources:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab.git
@@ -159,11 +151,14 @@ modules:
           tag-pattern: ^(MeshLab-[\d.]+)$
       - type: git
         url: https://github.com/alemuntoni/meshlab-external-libraries.git
-        tag: 2025.07
+        tag: "2025.07"
         commit: fa745655c9b313506110afc54d8fbfbb51bca5ad
         dest: src/external
-      # - type: patch
-      #   path: fix_E57Format_include_cstdint.patch
+      - type: patch
+        path: lib3mf-fix-include.patch
+        options:
+          - -d
+          - src/external
 
   # - name: MeshLab-extra-plugin
   #   buildsystem: cmake-ninja

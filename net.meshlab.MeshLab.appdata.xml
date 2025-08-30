@@ -41,6 +41,7 @@
     <content_rating type="oars-1.1"/>
     <developer_name>Visual Computing Lab</developer_name>
     <releases>
+        <release version="2025.07" date="2025-07-22"/>
         <release version="2023.12" date="2023-12-12"/>
         <release version="2022.02" date="2022-03-02"/>
         <release version="2021.10" date="2021-10-28"/>
