@@ -140,7 +140,6 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=Release
-      - -DMESHLAB_ALLOW_DOWNLOAD_SOURCE_LIB3MF=OFF
     sources:
       - type: git
         url: https://github.com/cnr-isti-vclab/meshlab.git
